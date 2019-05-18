@@ -25,12 +25,12 @@ class TripMeasures
      * @var int
      * @ORM\Column(type="integer")
      * @ORM\ManyToOne(targetEntity="Trips",inversedBy="tripsMeasures", cascade={"persist"})
-     * @ORM\JoinColumn(onDelete="CASCADE")
+     * @ORM\JoinColumn(onDelete="CASCADE",referencedColumnName="id",name="trip_id")
      */
     private $trip;
 
     /**
-     * @var int
+     * @var float
      * @ORM\Column(type="decimal",scale=2,precision=5)
      */
     private $distance;
@@ -45,10 +45,12 @@ class TripMeasures
 
     /**
      * @param int $id
+     * @return TripMeasures
      */
-    public function setId(int $id): void
+    public function setId(int $id): TripMeasures
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
@@ -61,26 +63,30 @@ class TripMeasures
 
     /**
      * @param int $trip
+     * @return TripMeasures
      */
-    public function setTrip(int $trip): void
+    public function setTrip(int $trip): TripMeasures
     {
         $this->trip = $trip;
+        return $this;
     }
 
     /**
-     * @return int
+     * @return flaot
      */
-    public function getDistance(): int
+    public function getDistance(): float
     {
         return $this->distance;
     }
 
     /**
-     * @param int $distance
+     * @param float $distance
+     * @return TripMeasures
      */
-    public function setDistance(int $distance): void
+    public function setDistance(float $distance): TripMeasures
     {
         $this->distance = $distance;
+        return $this;
     }
 
 
