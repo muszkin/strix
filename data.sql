@@ -8,6 +8,10 @@
 
 DROP DATABASE IF EXISTS `strix`;
 CREATE DATABASE IF NOT EXISTS `strix` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE USER 'strix'@'localhost' IDENTIFIED BY 'strix';
+GRANT ALL PRIVILEGES ON strix.* TO 'strix'@'localhost';
+FLUSH PRIVILEGES;
+
 USE `strix`;
 
 DROP TABLE IF EXISTS `trips`;
