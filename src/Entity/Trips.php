@@ -17,7 +17,7 @@ class Trips
     /**
      * @var int
      * @ORM\Id
-     * @ORM\Column(type="integer", options={"autoincrement":true})
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
@@ -35,7 +35,7 @@ class Trips
     private $measure_interval;
 
     /**
-     * @ORM\OneToMany(targetEntity="TripMeasures",mappedBy="trip_id")
+     * @ORM\OneToMany(targetEntity="TripMeasures",mappedBy="trip")
      */
     private $tripsMeasures;
 

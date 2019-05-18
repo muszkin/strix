@@ -16,16 +16,15 @@ class TripMeasures
     /**
      * @var int
      * @ORM\Id
-     * @ORM\Column(type="integer",options={"autoincrement":true})
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
-     * @ORM\ManyToOne(targetEntity="Trips",inversedBy="tripsMeasures", cascade={"persist"})
-     * @ORM\JoinColumn(onDelete="CASCADE",referencedColumnName="id",name="trip_id")
+     * @ORM\ManyToOne(targetEntity="Trips",inversedBy="tripsMeasures")
+     * @ORM\JoinColumn(name="trip_id",referencedColumnName="id",onDelete="CASCADE")
      */
     private $trip;
 
@@ -72,7 +71,7 @@ class TripMeasures
     }
 
     /**
-     * @return flaot
+     * @return float
      */
     public function getDistance(): float
     {

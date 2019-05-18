@@ -1,1 +1,26 @@
-<h1>Hello world</h1>
+<h1>Strix</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Trip</th>
+            <th>Distance</th>
+            <th>Measure interval</th>
+            <th>Avg speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tripReport in tripsReport %}
+            <tr>
+                <td>{{ tripReport.name }}</td>
+                <td>{{ tripReport.distance }}</td>
+                <td>{{ tripReport.measureInterval }}</td>
+                <td>{{ tripReport.avgSpeed }}</td>
+            </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">No trips</td>
+                </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -15,6 +15,6 @@ class IndexControllerTest extends WebTestCase
 
         $this->assertEquals(200,$client->getResponse()->getStatusCode());
 
-        $this->assertGreaterThan(0,$crawler->filter("h1:contains('Hello world')")->count());
+        $this->assertGreaterThan(0,$crawler->filter("h1:contains('Strix')")->count());
     }
 }

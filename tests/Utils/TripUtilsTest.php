@@ -49,6 +49,6 @@ class TripUtilsTest extends TestCase
         $tripUtils = new TripUtils();
 
         $speed = $tripUtils->calculateSpeed(0.90,15);
-        $this->assertSame(216.0,$speed);
+        $this->assertSame(216.0, $speed);
     }
  }

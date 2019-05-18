@@ -35,6 +35,6 @@ class TripUtils
      */
     public function calculateSpeed(float $distance,int $time): float
     {
-        return (3600 * $distance) / $time;
+        return floor((3600 * $distance) / $time);
     }
 }
