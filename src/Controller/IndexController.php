@@ -16,7 +16,6 @@ class IndexController
      */
     public function indexAction()
     {
-        phpinfo();
         return [];
     }
 }

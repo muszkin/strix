@@ -41,6 +41,14 @@ class TripUtilsTest extends TestCase
 
         $tripMeasure = $tripUtils->findLongestPart($tripMeasures);
 
-        $this->assertEquals(1,$tripMeasure->getId());
+        $this->assertSame(1,$tripMeasure->getId());
+    }
+
+    public function testCalculateSpeed()
+    {
+        $tripUtils = new TripUtils();
+
+        $speed = $tripUtils->calculateSpeed(0.90,15);
+        $this->assertSame(216.0,$speed);
     }
  }

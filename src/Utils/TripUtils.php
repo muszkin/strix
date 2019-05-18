@@ -27,4 +27,14 @@ class TripUtils
         }
         return $tripsMeasures[$longestPartId];
     }
+
+    /**
+     * @param float $distance
+     * @param int $time
+     * @return float
+     */
+    public function calculateSpeed(float $distance,int $time): float
+    {
+        return (3600 * $distance) / $time;
+    }
 }
