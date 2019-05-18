@@ -39,7 +39,7 @@ class PrepareReport
 
         if ($measures->count() < 2) {
             $tripReport->setDistance(0);
-            $tripReport->setAvgSpeed(0);
+            $tripReport->setAvgSpeed(0.0);
             return $tripReport;
         }
 
