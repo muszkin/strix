@@ -18,6 +18,10 @@ class TripUtils
         $longestPartId = null;
         $longestPartDistance = null;
         foreach ($tripsMeasures as $key => $tripsMeasure) {
+            //skipp invalid measure
+            if ($tripsMeasure->getDistance() < 0.0){
+                continue;
+            }
             $part = $tripsMeasure->getDistance() - $totalDistance;
             if ($part > $longestPartDistance) {
                 $longestPartId = $key;
@@ -35,6 +39,9 @@ class TripUtils
      */
     public function calculateSpeed(float $distance,int $time): float
     {
+        if ($time < 1 || $distance === 0.0 || $distance < 0.0) {
+            return 0;
+        }
         return floor((3600 * $distance) / $time);
     }
 }
