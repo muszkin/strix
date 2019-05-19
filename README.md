@@ -14,3 +14,4 @@ php bin/phpunit
 ```bash
 php bin/console server:run
 ```
+* Navigate to http://127.0.0.1:8000/
